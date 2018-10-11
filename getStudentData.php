@@ -41,7 +41,6 @@
 //get the peers for this student to do peer marking
   $query = "SELECT * FROM student WHERE smallgroupid = " . $smallGroup . ";";
   $result2 = mysqli_query($connection,$query);
-  echo $query;
   if (!$result2) {
         die("Database query failed");
   }
@@ -104,8 +103,6 @@
    }
    $markall1=mysqli_fetch_assoc($markall);
    $numOfGroups = $markall1["numgroups"];
-   echo $groupMarked . "<br>";
-   echo $numOfGroups . "<br>";
    if ($groupMarked + 1 == $numOfGroups) {
      $groupDidMarking=2;
    } else if ($groupMarked > 0) {
@@ -114,91 +111,10 @@
      $groupDidMarking=0;
    } 
 
-  <head>
-    <meta charset="utf-8">
-    <title>Mark Group</title>
-    <link rel="stylesheet" href="video.css">
-  </head>
-  <body>
-
-<?php
-   //connect to database
-   include 'connecttodb.php';
-   $whichStudent    = $_POST["westid"];
-   $studentPassword = $_POST["mypass"];
-   $studentPassword = "pass"; //just for testing!
-   //check password
-   $query           = "Select * from student where userid = '" . $whichStudent . "' AND password='" . $studentPassword . "';";
-   $result          = mysqli_query($connection, $query);
-   if (!$result) {
-       die("Database query failed");
-   }
-   //get the groups that this group is supposed to mark
-   $row        = mysqli_fetch_assoc($result);
-   $whichUser  = $row["userid"];
-   $smallGroup = $row["smallgroupid"];
-   $query      = "SELEcT biggroupid FROM smallgroup where smallgroupid ='" . $smallGroup . "';";
-   $result     = mysqli_query($connection, $query);
-   if (!$result) {
-       die("Database query failed");
-   }
-   $row1          = mysqli_fetch_assoc($result);
-   $whichBigGroup = $row1["biggroupid"];
-   $query         = "SELEcT smallgroupid FROM smallgroup where biggroupid ='" . $whichBigGroup . "';";
-   $result        = mysqli_query($connection, $query);
-   if (!$result) {
-       die("Database query failed");
-   }
-   //get the peers for this student to do peer marking
-   $query   = "SELECT * FROM student WHERE smallgroupid = " . $smallGroup . ";";
-   $result2 = mysqli_query($connection, $query);
-   echo $query;
-   if (!$result2) {
-       die("Database query failed");
-   }
-   //get information to figure out average marks
-   $query       = "SELECT AVG(creativitymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-   $resultfinal = mysqli_query($connection, $query);
-   if (!$resultfinal) {
-       die("Database query failed");
-   }
-   $rowavg      = mysqli_fetch_assoc($resultfinal);
-   $avgcreative = $rowavg["avgmark"];
-   $query       = "SELECT AVG(relevancemark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-   $resultfinal = mysqli_query($connection, $query);
-   if (!$resultfinal) {
-       die("Database query failed");
-   }
-   $rowavg      = mysqli_fetch_assoc($resultfinal);
-   $avgrel      = $rowavg["avgmark"];
-   $query       = "SELECT AVG(examplesmark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-   $resultfinal = mysqli_query($connection, $query);
-   if (!$resultfinal) {
-       die("Database query failed");
-   }
-   $rowavg      = mysqli_fetch_assoc($resultfinal);
-   $avgexample  = $rowavg["avgmark"];
-   $query       = "SELECT AVG(claritymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-   $resultfinal = mysqli_query($connection, $query);
-   if (!$resultfinal) {
-       die("Database query failed");
-   }
-   $rowavg       = mysqli_fetch_assoc($resultfinal);
-   $avgclear     = $rowavg["avgmark"];
-   $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear) / 4;
-   //find fav video
-   $query        = "SELECT videoid FROM markingscheme WHERE favgroup = 1 AND markingsmallgroupid = " . $smallGroup . ";";
-   $resultfinal  = mysqli_query($connection, $query);
-   if (!$resultfinal) {
-       die("Database query failed");
-   }
-   $rowfav       = mysqli_fetch_assoc($resultfinal);
-   $favgroup     = $rowfav["videoid"];
-   $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear) / 4;
 ?>
-    <h2>Hello
+    <h1>Hello
 <?php
-   echo $row["firstname"] . " " . $row["lastname"] . '</h2>';
+   echo $row["firstname"] . " " . $row["lastname"] . '</h1>';
 ?>
         <h2>You are in group: <span id="groupnum">
 <?php
@@ -210,7 +126,6 @@
           <input type="radio" name="mark" id="video" onclick="showVideoMarking() ">Mark some videos<br>
           <input type="radio" name="mark" id="peer" onclick="showPeerEval()">Do the peer evaluation for people in groups<br>
           <input type="radio" name="mark" id="seemark" disabled>See your group's video mark (you cannot select this option until after all the other groups have marked you!) <br>
-          <hr>
 
           </div>
 
@@ -366,32 +281,37 @@
             </form>
 
           </div>
+
+
+<!--  This is where the final overall marks are displayed -------------------------------------
+-->
+
           <div id="finalmark">
-            <hr> $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
-            <h1>These are the marks for your video</h1>
+            <hr> 
+            <h2>These are the marks for your video:</h2>
             <ul>
               <li>CREATIVITY AVERAGE:
 <?php
-   echo $avgcreative;
+   echo round($avgcreative,1);
 ?>
             </li>
               <li>USE OF EXAMPLES AVERAGE:
 <?php
-   echo $avgexample;
+   echo round($avgexample,1);
 ?>
             </li>
               <li>CLARITY AVERAGE:
 <?php
-   echo $avgclear;
+   echo round($avgclear,1);
 ?>
             </li>
               <li>RELEVANCE AVERAGE:
 <?php
-   echo $avgrel;
+   echo round($avgrel,1);
 ?>
             </li>
             </ul>
-            <h2>Your Groups Overall Average, out of 4, was:
+            <h2>Your group's overall average, out of 4, was:
 <?php
    echo $finalaverage * 4 / 5;
 ?>
@@ -401,14 +321,10 @@
     echo $groupDidMarking;
 ?>
 
-</h2>
- <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
- </ul>
-<hr>
-</div>
           </h2>
-            <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
-            </ul>
+              <p>If you marked every video in your group of n assigned videos, you received 2 out 2. If you marked 1 to n-1 videos in your group of n videos to be marked, you received 1 out 2. If you marked 0 videos, your group received 0 out of 2 for this.</p>
+
+            <h2>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h2>
             <hr>
           </div>
 
