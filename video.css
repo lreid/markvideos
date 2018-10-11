@@ -1,7 +1,60 @@
 .notdone {
          color: green;
 }
+
+
+#markvideo {
+   background-color: whitesmoke;
+}
+
+#peereval {
+    background-color: snow;
+}
+
+#finalmark {
+   background-color: floralwhite;
+}
+
 .alreadydone {
          color: red;
 }
 
+.thefav {
+         color: cornflowerblue;
+}
+
+
+option {
+   font-weight: bold;
+   font-family: 'Mali',cursive;
+   font-size: 14px;
+}
+
+body {
+   font-family: 'Mali', cursive;
+   font-size: 14px;
+   background-color: seashell;
+}
+
+input[type='radio'] { transform: scale(1.5); }
+input[type='checkbox'] { transform: scale(3); }
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}

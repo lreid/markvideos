@@ -1,38 +1,54 @@
 //set up the action listeners
 window.onload = function () {
-        mydate=new Date('2011-04-11');
-        nowdate= Date.now();
+        markingDueDate=new Date('2018-12-04');
+        nowDate= Date.now();
+
+        document.getElementById("peereval").style.display = "none";
+        document.getElementById("markvideo").style.display = "none";
+        document.getElementById("finalmark").style.display = "none";
+
         
+//hide final mark and group video area
         if (document.getElementById("peer").checked) {
             document.getElementById("peereval").style.display = "block";
-        } else {
-            document.getElementById("peereval").style.display = "none";
-        }
-
-        if (document.getElementById("video").checked) {
-            document.getElementById("markvideo").style.display = "block";
-        } else {
+            document.getElementById("finalmark").style.display = "none";
             document.getElementById("markvideo").style.display = "none";
         }
 
+//hide peer and final area
+        if (document.getElementById("video").checked) {
+            document.getElementById("peereval").style.display = "none";
+            document.getElementById("markvideo").style.display = "block";
+            document.getElementById("finalmark").style.display = "none";
+        }
 
-        document.getElementById("finalmark").style.display = "none";
-        if (mydate>nowdate) {
-//            alert ("now");
-            document.getElementById("video").disabled = false;
-            document.getElementById("peer").disabled = false;
-            document.getElementById("seemark").disabled = true;
-
-        } else {
+//hide peer and video area
+        if (document.getElementById("seemark").checked) {
             document.getElementById("peereval").style.display = "none";
             document.getElementById("markvideo").style.display = "none";
             document.getElementById("finalmark").style.display = "block";
-            document.getElementById("video").disabled = true;
-            document.getElementById("peer").disabled = true;
-            document.getElementById("seemark").disabled = false;
-            document.getElementById("seemark").checked = true;
-            
         }
+
+
+//if it is before the due date for marking the assignments
+//then let the student continue to submit marks, otherwise display their marks
+
+//        if (markingDueDate>nowDate) {
+//            document.getElementById("video").disabled = false;
+//            document.getElementById("peer").disabled = false;
+//            document.getElementById("seemark").disabled = true;
+//
+//        } else {
+//            document.getElementById("peereval").style.display = "none";
+//            document.getElementById("markvideo").style.display = "none";
+//            document.getElementById("finalmark").style.display = "block";
+//            document.getElementById("video").disabled = true;
+//            document.getElementById("peer").disabled = true;
+//            document.getElementById("seemark").disabled = false;
+//            document.getElementById("seemark").checked = true;
+            
+//        }
+ 
         prepareActionListeners();
 
 }
@@ -57,12 +73,20 @@ function checkKey(event) {
 function showVideoMarking() {
         document.getElementById("markvideo").style.display = "block";
         document.getElementById("peereval").style.display = "none";
-        document.body.style.backgroundColor="yellow";
+        document.getElementById("finalmark").style.display = "none";
 }
+
 function showPeerEval() {
         document.getElementById("markvideo").style.display = "none";
         document.getElementById("peereval").style.display = "block";
-        document.body.style.backgroundColor="eggshell";
+        document.getElementById("finalmark").style.display = "none";
+}
+
+
+function showFinalMarks() {
+        document.getElementById("markvideo").style.display = "none";
+        document.getElementById("finalmark").style.display = "block";
+        document.getElementById("peereval").style.display = "none";
 }
 
 function displayPeer() {

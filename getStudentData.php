@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-  <title>Mark Group</title>
+  <title>3 Minute Videos in Western Databases Course</title>
   <link rel="stylesheet" href="video.css">
+  <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
 </head>
 
 <body>
@@ -12,65 +13,67 @@
   include 'connecttodb.php';
   $whichStudent=$_POST["westid"];
   $studentPassword=$_POST["mypass"];
-  $studentPassword="pass";//just for testing!
 
 //check password
   $query= "Select * from student where userid = '". $whichStudent . "' AND password='" .$studentPassword."';";
   $result = mysqli_query($connection,$query);
   if (!$result) {
-        die("Database query failed");
+        die("Database query failed - can't get into database");
+  }
+  if (mysqli_num_rows($result)==0) {
+        die ("Either your password or your userid is wrong");
   }
 
 //get the groups that this group is supposed to mark
   $row = mysqli_fetch_assoc($result);
   $whichUser = $row["userid"];
   $smallGroup = $row["smallgroupid"];
-  $query="SELEcT biggroupid FROM smallgroup where smallgroupid ='" . $smallGroup ."';";
+  $query="SELECT biggroupid FROM smallgroup WHERE smallgroupid =" . $smallGroup .";";
   $result = mysqli_query($connection,$query);
   if (!$result) {
-        die("Database query failed");
+        die("Database query failed - cant get your group");
   }
   $row1=mysqli_fetch_assoc($result);
   $whichBigGroup = $row1["biggroupid"];
-  $query="SELEcT smallgroupid FROM smallgroup where biggroupid ='" . $whichBigGroup ."';";
+  $query="SELEcT smallgroupid FROM smallgroup where biggroupid =" . $whichBigGroup . ";";
   $result = mysqli_query($connection,$query);
   if (!$result) {
-        die("Database query failed");
+        die("Database query failed -getting big group");
   }
 
 //get the peers for this student to do peer marking
   $query = "SELECT * FROM student WHERE smallgroupid = " . $smallGroup . ";";
   $result2 = mysqli_query($connection,$query);
   if (!$result2) {
-        die("Database query failed");
+        die("Database query failed -getting group members");
   }
 
 //get information to figure out average marks
   $query = "SELECT AVG(creativitymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
   $resultfinal = mysqli_query($connection, $query);
   if (!$resultfinal) {
-        die("Database query failed");
+        die("Database query failed - getting creative ");
   }
   $rowavg = mysqli_fetch_assoc($resultfinal);
   $avgcreative = $rowavg["avgmark"];
   $query = "SELECT AVG(relevancemark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
   $resultfinal = mysqli_query($connection, $query);
   if (!$resultfinal) {
-        die("Database query failed");
+        die("Database query failed - getting relevance");
   }
   $rowavg = mysqli_fetch_assoc($resultfinal);
   $avgrel= $rowavg["avgmark"]; 
   $query = "SELECT AVG(examplesmark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
   $resultfinal = mysqli_query($connection, $query);
   if (!$resultfinal) {
-        die("Database query failed");
+        die("Database query failed - getting example");
   }
   $rowavg = mysqli_fetch_assoc($resultfinal);
   $avgexample = $rowavg["avgmark"];
   $query = "SELECT AVG(claritymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
   $resultfinal = mysqli_query($connection, $query);
   if (!$resultfinal) {
-        die("Database query failed");
+        die("Database query failed - getting clarity");
   }
   $rowavg = mysqli_fetch_assoc($resultfinal);
   $avgclear = $rowavg["avgmark"];
@@ -80,7 +83,7 @@
   $query = "SELECT videoid FROM markingscheme WHERE favgroup = 1 AND markingsmallgroupid = " . $smallGroup . ";";
   $resultfinal = mysqli_query($connection, $query);
   if (!$resultfinal) {
-        die("Database query failed");
+        die("Database query failed - getting fav");
   }
   $rowfav = mysqli_fetch_assoc($resultfinal);
   $favgroup = $rowfav["videoid"];
@@ -122,10 +125,10 @@
 ?>
 
 </span></h2>
-          You must mark all the videos before midnight of <span id="markingdue"></span><br> Do you want to: <br>
+          You must mark all the videos before midnight of <span id="markingdue">Tuesday, Dec 4</span><br> Do you want to: <br>
           <input type="radio" name="mark" id="video" onclick="showVideoMarking() ">Mark some videos<br>
           <input type="radio" name="mark" id="peer" onclick="showPeerEval()">Do the peer evaluation for people in groups<br>
-          <input type="radio" name="mark" id="seemark" disabled>See your group's video mark (you cannot select this option until after all the other groups have marked you!) <br>
+          <input type="radio" name="mark" id="seemark" onclick="showFinalMarks()">See your group's video mark (you cannot select this option until after all the other groups have marked you!) <br>
 
           </div>
 
@@ -133,10 +136,12 @@
 -->
 
           <div id="markvideo">
-            <h3>Mark Videos</h3>
+            <hr>
+            <h2>Mark Videos</h2>
             <form action="setGroupMark.php" method="post" enctype="multipart/form-data">
 
-              Select the group you want to mark. NOTE: Groups in red have already been marked but you can still change that mark. Groups in green have not been marked yet:
+              Select the group you want to mark. <br>NOTE: Groups in red have already been marked but you can still change that mark. <br>Groups in green have not been marked yet. <br>
+              The group in blue is your favourite video right now. <br>
 
 <?php
    echo '<input type="hidden" name="groupDoingScoring" value="' . $smallGroup . '">';
@@ -174,6 +179,9 @@
            $example     = ' data-example="' . $rowmark["examplesmark"] . '" ';
            $clear       = ' data-clear="' . $rowmark["claritymark"] . '" ';
            $fav         = ' data-fav="' . $rowmark["favgroup"] . '" ';
+           if ($rowmark["favgroup"] == 1) {
+              $hasBeenDone = ' class="alreadydone thefav" ';
+           } 
        } else {
            $hasBeenDone = ' class="notdone" ';
            $creative    = ' data-creative="" ';
@@ -194,7 +202,8 @@
 ?>
 
 
-                <br><br> Of all the videos we watched, this group's was my favourite (check for YES): <input name="favvideo" type="checkbox" id="favouritevideo"> <br> If you check this box, then any other videos you have previously selected will be UNSELECTED<br>
+                <br><br> Of all the videos we watched, this group's was my favourite (check for YES): &nbsp <input name="favvideo" type="checkbox" id="favouritevideo"> <br> If you check this box, then 
+                any other videos you have previously selected will be UNSELECTED<br>
                 <p></p>
 
                 <h3> URL: <a href="" id="videourlhref" target="_blank">
@@ -221,7 +230,7 @@
                 <input type="radio" name="relevance" value="5" id="r5">5<br>
                 <br>
                 <input type="submit" value="Submit Group Evaluation" disabled="true" id="submitGroupEval">
-
+                <br>
                 <iframe width="420" height="315" id="setTheVideo"></iframe>
             </form>
           </div>
@@ -229,10 +238,10 @@
 <!--  Peer Evaluation Code ---------------------------------------------------------------------
 -->
           <div id="peereval">
-
-            <h3>Peer Evaluation</h3>
-            Select the person you want to evaluate:
-            <h3>Your Group Members:</h3>
+            <hr>
+            <h2>Peer Evaluation</h2>
+       
+            <h3>Select your group member that you want to evaluate:</h3>
             <form action="setPeerMark.php" method="post" enctype="multipart/form-data">
 
 <?php
@@ -269,15 +278,16 @@
 
 
                 <p>
-                  0=This student did absolutely nothing to contribute to this group- WARNING: this could cause this student to get 0 for the video<br> 1=This student did do a bit, but not as much as the other members<br> 2=This student did their fair
-                  share of the project</p>
+                  0=This student did absolutely nothing to contribute to this group- WARNING: this could cause this student to get 0 for the video
+                <br> 1=This student did do a slight bit of work, but not as much as the other members
+                <br> 2=This student did their fair share of the work for the video and for marking the other videos</p>
 
                 <h2> <span id="studentpeer"></span>: </h2>
-                <h4> Give New Ranking </h4>
-                <input type="radio" value="0" name="peerr" id="peer0">0
-                <input type="radio" value="1" name="peerr" id="peer1">1
-                <input type="radio" value="2" name="peerr" id="peer2" checked="checked">2<br>
-                <input type="submit" value="Enter Peer Evaluation" disabled="true" id="submitPeerEval">
+                <h4> Give New Ranking Below: </h4>
+                <input type="radio" value="0" name="peerr" id="peer0"> 0
+                <input type="radio" value="1" name="peerr" id="peer1"> 1
+                <input type="radio" value="2" name="peerr" id="peer2" checked="checked"> 2 <p>
+                <input type="submit" value="Enter Peer Evaluation" disabled="true" id="submitPeerEval"></p>
             </form>
 
           </div>
