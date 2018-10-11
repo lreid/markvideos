@@ -6,97 +6,90 @@
     <title>Mark Group</title>
     <link rel="stylesheet" href="video.css">
   </head>
-
   <body>
-    <?php
-//connect to database
-  include 'connecttodb.php';
-  $whichStudent=$_POST["westid"];
-  $studentPassword=$_POST["mypass"];
-  $studentPassword="pass";//just for testing!
 
-//check password
-  $query= "Select * from student where userid = '". $whichStudent . "' AND password='" .$studentPassword."';";
-  $result = mysqli_query($connection,$query);
-  if (!$result) {
-        die("Database query failed");
-  }
-
-//get the groups that this group is supposed to mark
-  $row = mysqli_fetch_assoc($result);
-  $whichUser = $row["userid"];
-  $smallGroup = $row["smallgroupid"];
-  $query="SELEcT biggroupid FROM smallgroup where smallgroupid ='" . $smallGroup ."';";
-  $result = mysqli_query($connection,$query);
-  if (!$result) {
-        die("Database query failed");
-  }
-  $row1=mysqli_fetch_assoc($result);
-  $whichBigGroup = $row1["biggroupid"];
-  $query="SELEcT smallgroupid FROM smallgroup where biggroupid ='" . $whichBigGroup ."';";
-  $result = mysqli_query($connection,$query);
-  if (!$result) {
-        die("Database query failed");
-  }
-
-//get the peers for this student to do peer marking
-  $query = "SELECT * FROM student WHERE smallgroupid = " . $smallGroup . ";";
-  $result2 = mysqli_query($connection,$query);
-  echo $query;
-  if (!$result2) {
-        die("Database query failed");
-  }
-
-//get information to figure out average marks
-  $query = "SELECT AVG(creativitymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-  $resultfinal = mysqli_query($connection, $query);
-  if (!$resultfinal) {
-        die("Database query failed");
-  }
-  $rowavg = mysqli_fetch_assoc($resultfinal);
-  $avgcreative = $rowavg["avgmark"];
-  $query = "SELECT AVG(relevancemark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-  $resultfinal = mysqli_query($connection, $query);
-  if (!$resultfinal) {
-        die("Database query failed");
-  }
-  $rowavg = mysqli_fetch_assoc($resultfinal);
-  $avgrel= $rowavg["avgmark"]; 
-  $query = "SELECT AVG(examplesmark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-  $resultfinal = mysqli_query($connection, $query);
-  if (!$resultfinal) {
-        die("Database query failed");
-  }
-  $rowavg = mysqli_fetch_assoc($resultfinal);
-  $avgexample = $rowavg["avgmark"];
-  $query = "SELECT AVG(claritymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
-  $resultfinal = mysqli_query($connection, $query);
-  if (!$resultfinal) {
-        die("Database query failed");
-  }
-  $rowavg = mysqli_fetch_assoc($resultfinal);
-  $avgclear = $rowavg["avgmark"];
-  $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
-
-//find fav video
-  $query = "SELECT videoid FROM markingscheme WHERE favgroup = 1 AND markingsmallgroupid = " . $smallGroup . ";";
-  $resultfinal = mysqli_query($connection, $query);
-  if (!$resultfinal) {
-        die("Database query failed");
-  }
-  $rowfav = mysqli_fetch_assoc($resultfinal);
-  $favgroup = $rowfav["videoid"];
-  $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
-
-
-?>
-      <h2>Hello
-        <?php
-   echo $row["firstname"]. " " . $row["lastname"] . '</h2>'; 
-?>
-          <h2>You are in group: <span id="groupnum">
 <?php
-  echo $smallGroup;
+   //connect to database
+   include 'connecttodb.php';
+   $whichStudent    = $_POST["westid"];
+   $studentPassword = $_POST["mypass"];
+   $studentPassword = "pass"; //just for testing!
+   //check password
+   $query           = "Select * from student where userid = '" . $whichStudent . "' AND password='" . $studentPassword . "';";
+   $result          = mysqli_query($connection, $query);
+   if (!$result) {
+       die("Database query failed");
+   }
+   //get the groups that this group is supposed to mark
+   $row        = mysqli_fetch_assoc($result);
+   $whichUser  = $row["userid"];
+   $smallGroup = $row["smallgroupid"];
+   $query      = "SELEcT biggroupid FROM smallgroup where smallgroupid ='" . $smallGroup . "';";
+   $result     = mysqli_query($connection, $query);
+   if (!$result) {
+       die("Database query failed");
+   }
+   $row1          = mysqli_fetch_assoc($result);
+   $whichBigGroup = $row1["biggroupid"];
+   $query         = "SELEcT smallgroupid FROM smallgroup where biggroupid ='" . $whichBigGroup . "';";
+   $result        = mysqli_query($connection, $query);
+   if (!$result) {
+       die("Database query failed");
+   }
+   //get the peers for this student to do peer marking
+   $query   = "SELECT * FROM student WHERE smallgroupid = " . $smallGroup . ";";
+   $result2 = mysqli_query($connection, $query);
+   echo $query;
+   if (!$result2) {
+       die("Database query failed");
+   }
+   //get information to figure out average marks
+   $query       = "SELECT AVG(creativitymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
+   $resultfinal = mysqli_query($connection, $query);
+   if (!$resultfinal) {
+       die("Database query failed");
+   }
+   $rowavg      = mysqli_fetch_assoc($resultfinal);
+   $avgcreative = $rowavg["avgmark"];
+   $query       = "SELECT AVG(relevancemark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
+   $resultfinal = mysqli_query($connection, $query);
+   if (!$resultfinal) {
+       die("Database query failed");
+   }
+   $rowavg      = mysqli_fetch_assoc($resultfinal);
+   $avgrel      = $rowavg["avgmark"];
+   $query       = "SELECT AVG(examplesmark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
+   $resultfinal = mysqli_query($connection, $query);
+   if (!$resultfinal) {
+       die("Database query failed");
+   }
+   $rowavg      = mysqli_fetch_assoc($resultfinal);
+   $avgexample  = $rowavg["avgmark"];
+   $query       = "SELECT AVG(claritymark) as 'avgmark'  FROM markingscheme WHERE videoid = " . $smallGroup . ";";
+   $resultfinal = mysqli_query($connection, $query);
+   if (!$resultfinal) {
+       die("Database query failed");
+   }
+   $rowavg       = mysqli_fetch_assoc($resultfinal);
+   $avgclear     = $rowavg["avgmark"];
+   $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear) / 4;
+   //find fav video
+   $query        = "SELECT videoid FROM markingscheme WHERE favgroup = 1 AND markingsmallgroupid = " . $smallGroup . ";";
+   $resultfinal  = mysqli_query($connection, $query);
+   if (!$resultfinal) {
+       die("Database query failed");
+   }
+   $rowfav       = mysqli_fetch_assoc($resultfinal);
+   $favgroup     = $rowfav["videoid"];
+   $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear) / 4;
+?>
+    <h2>Hello
+<?php
+   echo $row["firstname"] . " " . $row["lastname"] . '</h2>';
+?>
+        <h2>You are in group: <span id="groupnum">
+<?php
+   echo $smallGroup;
 ?>
 
 </span></h2>
@@ -117,68 +110,59 @@
 
               Select the group you want to mark. NOTE: Groups in red have already been marked but you can still change that mark. Groups in green have not been marked yet:
 
-              <?php
+<?php
    echo '<input type="hidden" name="groupDoingScoring" value="' . $smallGroup . '">';
    echo '<select name="whichgroup" size="9" id="pickagroup"> ';
-  $setFirstOne=0;
-  while ($row = mysqli_fetch_assoc($result)) {
-
-
- 	  echo "<option value='" . $row["smallgroupid"];
-
-//set the url to be marked
- 	  $query = "SELECT * FROM video WHERE smallgroupid = " . $row["smallgroupid"] . ";";
-	  $rowv = mysqli_query($connection,$query);
-	  if (!$rowv) {
-        	die("Database query failed - getting URL ");
-	  }
-          $rowvideo = mysqli_fetch_assoc($rowv);
-	  $url = 'data-url="'. $rowvideo["url"] .'" ';
-
-//set the video topic
-	  $query = "SELECT topic FROM videotopic WHERE vtopicid = " . $rowvideo["vtopicid"] .";";
-	  $rowt = mysqli_query($connection,$query);
-	  if (!$rowt) {
-        	die("Database query failed - getting video topic");
-  	  }
-          $rowtopic = mysqli_fetch_assoc($rowt);
-	  $topic = 'data-topic="' . $rowtopic["topic"] . '" ';
-
-//check to see if this group has already been marked
-	  $query = "SELECT * FROM markingscheme WHERE videoid = " . $rowvideo["videoid"] ." AND markingsmallgroupid = '" . $smallGroup ."';";
-	  $rowm = mysqli_query($connection,$query);
-	  if (!$rowm) {
-        	die("Database query failed - getting video topic");
-  	  }
-          $rowmark = mysqli_fetch_assoc($rowm);
-          if (mysqli_num_rows($rowm) > 0) {
-             $hasBeenDone = ' class="alreadydone" ';
-             $creative = ' data-creative="'. $rowmark["creativitymark"] . '" ';
-             $rel = ' data-rel="'. $rowmark["relevancemark"] . '" ';
-             $example = ' data-example="'. $rowmark["examplesmark"] . '" ';
-             $clear = ' data-clear="'. $rowmark["claritymark"] . '" ';
-             $fav = ' data-fav="'. $rowmark["favgroup"] . '" ';
-          } else {
-             $hasBeenDone = ' class="notdone" ';
-             $creative = ' data-creative="" ';
-             $rel = ' data-rel="" ';
-             $example = ' data-example="" ';
-             $clear = ' data-clear="" ';
-             $fav = ' data-fav="0" ';
-          }
-
-
-          echo "' ";
-          if ($setFirstOne < 1) {
-              echo " selected ";
-              $setFirstOne = 1;
-          }
- 	  echo  $url . " " . $topic . $hasBeenDone . $fav .  $creative . $rel . $example . $clear . ">Group " . $row["smallgroupid"] . "</option>";
-  
-
-  }
-  echo "</select>";
-
+   $setFirstOne = 0;
+   while ($row = mysqli_fetch_assoc($result)) {
+       echo "<option value='" . $row["smallgroupid"];
+       //set the url to be marked
+       $query = "SELECT * FROM video WHERE smallgroupid = " . $row["smallgroupid"] . ";";
+       $rowv  = mysqli_query($connection, $query);
+       if (!$rowv) {
+           die("Database query failed - getting URL ");
+       }
+       $rowvideo = mysqli_fetch_assoc($rowv);
+       $url      = 'data-url="' . $rowvideo["url"] . '" ';
+       //set the video topic
+       $query    = "SELECT topic FROM videotopic WHERE vtopicid = " . $rowvideo["vtopicid"] . ";";
+       $rowt     = mysqli_query($connection, $query);
+       if (!$rowt) {
+           die("Database query failed - getting video topic");
+       }
+       $rowtopic = mysqli_fetch_assoc($rowt);
+       $topic    = 'data-topic="' . $rowtopic["topic"] . '" ';
+       //check to see if this group has already been marked
+       $query    = "SELECT * FROM markingscheme WHERE videoid = " . $rowvideo["videoid"] . " AND markingsmallgroupid = '" . $smallGroup . "';";
+       $rowm     = mysqli_query($connection, $query);
+       if (!$rowm) {
+           die("Database query failed - getting video topic");
+       }
+       $rowmark = mysqli_fetch_assoc($rowm);
+       if (mysqli_num_rows($rowm) > 0) {
+           $hasBeenDone = ' class="alreadydone" ';
+           $creative    = ' data-creative="' . $rowmark["creativitymark"] . '" ';
+           $rel         = ' data-rel="' . $rowmark["relevancemark"] . '" ';
+           $example     = ' data-example="' . $rowmark["examplesmark"] . '" ';
+           $clear       = ' data-clear="' . $rowmark["claritymark"] . '" ';
+           $fav         = ' data-fav="' . $rowmark["favgroup"] . '" ';
+       } else {
+           $hasBeenDone = ' class="notdone" ';
+           $creative    = ' data-creative="" ';
+           $rel         = ' data-rel="" ';
+           $example     = ' data-example="" ';
+           $clear       = ' data-clear="" ';
+           $fav         = ' data-fav="0" ';
+       }
+       echo "' ";
+       if ($setFirstOne < 1) {
+           echo " selected ";
+           $setFirstOne = 1;
+       }
+       echo $url . " " . $topic . $hasBeenDone . $fav . $creative . $rel . $example . $clear . ">Group " . $row["smallgroupid"] . "</option>";
+       
+   }
+   echo "</select>";
 ?>
 
 
@@ -214,11 +198,8 @@
             </form>
           </div>
 
-
-
-          <!--  Peer Evaluation Code ---------------------------------------------------------------------
+<!--  Peer Evaluation Code ---------------------------------------------------------------------
 -->
-
           <div id="peereval">
 
             <h3>Peer Evaluation</h3>
@@ -226,40 +207,37 @@
             <h3>Your Group Members:</h3>
             <form action="setPeerMark.php" method="post" enctype="multipart/form-data">
 
-              <?php
+<?php
    echo '<input type="hidden" name="doingUserId" value="' . $whichUser . '">';
    echo '<select id="pickpeer" name="peereval" size="3" width="300">';
-
    $setFirstChoice = 0;
    while ($row = mysqli_fetch_assoc($result2)) {
-      if ($row["userid"] <> $whichUser) {
-          echo "<option value='" . $row["userid"] . "'";
-
-          if ($setFirstChoice > 0)  {
-             echo " selected ";
-          } 
-
+       if ($row["userid"] <> $whichUser) {
+           echo "<option value='" . $row["userid"] . "'";
+           if ($setFirstChoice > 0) {
+               echo " selected ";
+           }
            $setFirstChoice = 1;
-          echo ">" . $row["firstname"] ." " . $row["lastname"] . " ";
-          $query = "SELECT * FROM peerassessment WHERE assessor = '" . $whichUser . "' AND gettingassess = '" . $row["userid"] ."';";
-          $result3 = mysqli_query($connection,$query);
-          if (!$result3) {
+           echo ">" . $row["firstname"] . " " . $row["lastname"] . " ";
+           $query   = "SELECT * FROM peerassessment WHERE assessor = '" . $whichUser . "' AND gettingassess = '" . $row["userid"] . "';";
+           $result3 = mysqli_query($connection, $query);
+           if (!$result3) {
                die("Database query failed");
-          } else  {
-            $rowpeer=mysqli_fetch_assoc($result3);
-            if (is_null($rowpeer["peerassessmark"])) {
-              $peermark[$row["userid"]] = -1 ;
-              echo "- No ranking yet";
-            } else {
-              $peermark[$row["userid"]] = $rowpeer["peerassessmark"] ;
-              echo "- was previously ranked by you with a " . $peermark[$row["userid"]];
-            }
-          }
-          echo "</option>";
-      }
+           } else {
+               $rowpeer = mysqli_fetch_assoc($result3);
+               if (is_null($rowpeer["peerassessmark"])) {
+                   $peermark[$row["userid"]] = -1;
+                   echo "- No ranking yet";
+               } else {
+                   $peermark[$row["userid"]] = $rowpeer["peerassessmark"];
+                   echo "- was previously ranked by you with a " . $peermark[$row["userid"]];
+               }
+           }
+           echo "</option>";
+       }
    }
- ?>
-                </select>
+?>
+              </select>
 
 
                 <p>
@@ -280,31 +258,31 @@
             <h1>These are the marks for your video</h1>
             <ul>
               <li>CREATIVITY AVERAGE:
-                <?php
-  echo $avgcreative;
+<?php
+   echo $avgcreative;
 ?>
-              </li>
+            </li>
               <li>USE OF EXAMPLES AVERAGE:
-                <?php
-  echo $avgexample;
+<?php
+   echo $avgexample;
 ?>
-              </li>
+            </li>
               <li>CLARITY AVERAGE:
-                <?php
-  echo $avgclear;
+<?php
+   echo $avgclear;
 ?>
-              </li>
+            </li>
               <li>RELEVANCE AVERAGE:
-                <?php
-  echo $avgrel;
+<?php
+   echo $avgrel;
 ?>
-              </li>
+            </li>
             </ul>
             <h2>Your Groups Overall Average, out of 4, was:
-              <?php
-  echo $finalaverage * 4 /5;
+<?php
+   echo $finalaverage * 4 / 5;
 ?>
-            </h2>
+          </h2>
             <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
             </ul>
             <hr>
@@ -314,7 +292,6 @@
           <script>
             displayPeer()
             displayVideo()
-
           </script>
   </body>
 
