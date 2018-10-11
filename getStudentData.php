@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-  <title>Mark Group</title>
-  <link rel="stylesheet" href="video.css">
-</head>
 
-<body>
-<?php
+  <head>
+    <meta charset="utf-8">
+    <title>Mark Group</title>
+    <link rel="stylesheet" href="video.css">
+  </head>
+
+  <body>
+    <?php
 //connect to database
   include 'connecttodb.php';
   $whichStudent=$_POST["westid"];
@@ -89,36 +90,35 @@
 
 
 ?>
-      <h2>Hello 
-<?php
+      <h2>Hello
+        <?php
    echo $row["firstname"]. " " . $row["lastname"] . '</h2>'; 
 ?>
-      <h2>You are in group: <span id="groupnum">
+          <h2>You are in group: <span id="groupnum">
 <?php
   echo $smallGroup;
 ?>
 
 </span></h2>
-      You must mark all the videos before midnight of <span id="markingdue"></span><br> Do you want to: <br>
-      <input type="radio" name="mark" id="video" onclick="showVideoMarking() ">Mark some videos<br>
-      <input type="radio" name="mark" id="peer" onclick="showPeerEval()">Do the peer evaluation for people in groups<br>
-      <input type="radio" name="mark" id="seemark" disabled>See your group's video mark (you cannot select this option until after all the other groups have marked you!) <br>
-      <hr>
+          You must mark all the videos before midnight of <span id="markingdue"></span><br> Do you want to: <br>
+          <input type="radio" name="mark" id="video" onclick="showVideoMarking() ">Mark some videos<br>
+          <input type="radio" name="mark" id="peer" onclick="showPeerEval()">Do the peer evaluation for people in groups<br>
+          <input type="radio" name="mark" id="seemark" disabled>See your group's video mark (you cannot select this option until after all the other groups have marked you!) <br>
+          <hr>
 
-     </div>
+          </div>
 
-<!-- Code to allow the group to mark a video -------------------------------
+          <!-- Code to allow the group to mark a video -------------------------------
 -->
 
-    <div id="markvideo">
-      <h3>Mark Videos</h3>
-      <form action="setGroupMark.php" method="post" enctype="multipart/form-data">
+          <div id="markvideo">
+            <h3>Mark Videos</h3>
+            <form action="setGroupMark.php" method="post" enctype="multipart/form-data">
 
-      Select the group you want to mark. NOTE: Groups in red have already been marked but you can still change that mark. Groups in green have not been marked yet:
+              Select the group you want to mark. NOTE: Groups in red have already been marked but you can still change that mark. Groups in green have not been marked yet:
 
-<?php
+              <?php
    echo '<input type="hidden" name="groupDoingScoring" value="' . $smallGroup . '">';
-
    echo '<select name="whichgroup" size="9" id="pickagroup"> ';
   $setFirstOne=0;
   while ($row = mysqli_fetch_assoc($result)) {
@@ -180,59 +180,53 @@
   echo "</select>";
 
 ?>
-  
 
-      <br><br>
-	  Of all the videos we watched, this group's was my favourite (check for YES):  <input name="favvideo" type="checkbox" id="favouritevideo"> <br>
-	  If you check this box, then any other videos you have previously selected will be UNSELECTED<br>
-      <p></p>
 
-      <h3> URL: <a href="" id="videourlhref" target="_blank">
-      <span id="videourl">www.csd.uwo.ca</span></a></h3> 
-      <h3>Topic: <span id="videotopic"></span></h3>
+                <br><br> Of all the videos we watched, this group's was my favourite (check for YES): <input name="favvideo" type="checkbox" id="favouritevideo"> <br> If you check this box, then any other videos you have previously selected will be UNSELECTED<br>
+                <p></p>
 
-      <h3> Ranking Scale: 1=Poor, 2=OK, 3=Average, 4=Good, 5=Excellent</h3> 
-      Creativity: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="radio" value="1" name="creative" id="c1">1 
-      <input type="radio" name="creative" value="2" id="c2">2 
-      <input type="radio" name="creative" value="3" id="c3">3
-      <input type="radio" name="creative" value="4" id="c4">4
-      <input type="radio" name="creative" value="5" id="c5">5<br> 
-      Use of Examples: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
-      <input type="radio" name="examples" value="1" id="e1">1 <input type="radio" name="examples" value="2" id="e2">2 
-     <input type="radio" name="examples" value="3" id="e3">3
-      <input
-        type="radio" name="examples" value="4" id="e4">4<input type="radio" name="examples" value="5" id="e5">5<br> 
-       Concepts Explained Clearly: <input type="radio" name="clearly" value="1"  id="cc1">1 
-       <input type="radio" name="clearly" value="2"  id="cc2">2 
-       <input type="radio" name="clearly" value="3"  id="cc3">3
-       <input type="radio" name="clearly"  value="4"  id="cc4">4
-        <input type="radio" name="clearly"  value="5"  id="cc5">5<br> Explanation of why the Concept is Relevant/Important: 
-        <input type="radio" name="relevance"  value="1"  id="r1">1 
-           <input type="radio" name="relevance" value="2"  id="r2">2 
-        <input type="radio" name="relevance" value="3"  id="r3">3
-        <input type="radio" name="relevance" value="4"  id="r4">4
-          <input type="radio" name="relevance" value="5"  id="r5">5<br>
-        <br>
-      <input type="submit" value="Submit Group Evaluation" disabled="true" id="submitGroupEval">
+                <h3> URL: <a href="" id="videourlhref" target="_blank">
+      <span id="videourl">www.csd.uwo.ca</span></a></h3>
+                <h3>Topic: <span id="videotopic"></span></h3>
 
-   <iframe width="420" height="315" id="setTheVideo"></iframe>
-</form>
-    </div>
+                <h3> Ranking Scale: 1=Poor, 2=OK, 3=Average, 4=Good, 5=Excellent</h3>
+                Creativity: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="radio" value="1" name="creative" id="c1">1
+                <input type="radio" name="creative" value="2" id="c2">2
+                <input type="radio" name="creative" value="3" id="c3">3
+                <input type="radio" name="creative" value="4" id="c4">4
+                <input type="radio" name="creative" value="5" id="c5">5<br> Use of Examples: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <input type="radio" name="examples" value="1" id="e1">1 <input type="radio" name="examples" value="2" id="e2">2
+                <input type="radio" name="examples" value="3" id="e3">3
+                <input type="radio" name="examples" value="4" id="e4">4<input type="radio" name="examples" value="5" id="e5">5<br> Concepts Explained Clearly: <input type="radio" name="clearly" value="1" id="cc1">1
+                <input type="radio" name="clearly" value="2" id="cc2">2
+                <input type="radio" name="clearly" value="3" id="cc3">3
+                <input type="radio" name="clearly" value="4" id="cc4">4
+                <input type="radio" name="clearly" value="5" id="cc5">5<br> Explanation of why the Concept is Relevant/Important:
+                <input type="radio" name="relevance" value="1" id="r1">1
+                <input type="radio" name="relevance" value="2" id="r2">2
+                <input type="radio" name="relevance" value="3" id="r3">3
+                <input type="radio" name="relevance" value="4" id="r4">4
+                <input type="radio" name="relevance" value="5" id="r5">5<br>
+                <br>
+                <input type="submit" value="Submit Group Evaluation" disabled="true" id="submitGroupEval">
 
-    
+                <iframe width="420" height="315" id="setTheVideo"></iframe>
+            </form>
+          </div>
 
-<!--  Peer Evaluation Code ---------------------------------------------------------------------
+
+
+          <!--  Peer Evaluation Code ---------------------------------------------------------------------
 -->
 
-    <div id="peereval">
+          <div id="peereval">
 
-      <h3>Peer Evaluation</h3>
-      Select the person you want to evaluate:
-<h3>Your Group Members:</h3>
-<form action="setPeerMark.php" method="post" enctype="multipart/form-data">
+            <h3>Peer Evaluation</h3>
+            Select the person you want to evaluate:
+            <h3>Your Group Members:</h3>
+            <form action="setPeerMark.php" method="post" enctype="multipart/form-data">
 
- <?php
+              <?php
    echo '<input type="hidden" name="doingUserId" value="' . $whichUser . '">';
    echo '<select id="pickpeer" name="peereval" size="3" width="300">';
 
@@ -265,63 +259,63 @@
       }
    }
  ?>
-</select>
+                </select>
 
 
-      <p>
-        0=This student did absolutely nothing to contribute to this group- WARNING: this could cause this student to get 0 for the video<br> 
-        1=This student did do a bit, but not as much as the other members<br> 
-        2=This student did their fair share of the project</p>
+                <p>
+                  0=This student did absolutely nothing to contribute to this group- WARNING: this could cause this student to get 0 for the video<br> 1=This student did do a bit, but not as much as the other members<br> 2=This student did their fair
+                  share of the project</p>
 
-<h2>      <span id="studentpeer"></span>: </h2>
-      <h4> Give New Ranking </h4> 
-      <input type="radio" value="0" name="peerr" id="peer0">0 
-      <input type="radio" value="1" name="peerr" id="peer1">1 
-      <input type="radio" value="2" name="peerr" id="peer2" checked="checked">2<br>
-      <input type="submit" value="Enter Peer Evaluation" disabled="true" id="submitPeerEval">
-      </form>
+                <h2> <span id="studentpeer"></span>: </h2>
+                <h4> Give New Ranking </h4>
+                <input type="radio" value="0" name="peerr" id="peer0">0
+                <input type="radio" value="1" name="peerr" id="peer1">1
+                <input type="radio" value="2" name="peerr" id="peer2" checked="checked">2<br>
+                <input type="submit" value="Enter Peer Evaluation" disabled="true" id="submitPeerEval">
+            </form>
 
-    </div>
-<div id="finalmark">
-    <hr>
-  $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
- <h1>These are the marks for your video</h1>
- <ul>
- <li>CREATIVITY AVERAGE: 
-<?php
+          </div>
+          <div id="finalmark">
+            <hr> $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
+            <h1>These are the marks for your video</h1>
+            <ul>
+              <li>CREATIVITY AVERAGE:
+                <?php
   echo $avgcreative;
 ?>
- </li>
- <li>USE OF EXAMPLES AVERAGE: 
-<?php
+              </li>
+              <li>USE OF EXAMPLES AVERAGE:
+                <?php
   echo $avgexample;
 ?>
-</li>
- <li>CLARITY AVERAGE: 
-<?php
+              </li>
+              <li>CLARITY AVERAGE:
+                <?php
   echo $avgclear;
 ?>
-</li>
- <li>RELEVANCE AVERAGE: 
-<?php
+              </li>
+              <li>RELEVANCE AVERAGE:
+                <?php
   echo $avgrel;
 ?>
-</li>
-</ul>
- <h2>Your Groups Overall Average, out of 4, was:
-<?php
+              </li>
+            </ul>
+            <h2>Your Groups Overall Average, out of 4, was:
+              <?php
   echo $finalaverage * 4 /5;
 ?>
-</h2>
- <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
- </ul>
-<hr>
-</div>
+            </h2>
+            <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
+            </ul>
+            <hr>
+          </div>
 
-  <script src="video.js"></script>
-  <script>displayPeer()
-          displayVideo()
-  </script>
-</body>
+          <script src="video.js"></script>
+          <script>
+            displayPeer()
+            displayVideo()
+
+          </script>
+  </body>
+
 </html>
-
