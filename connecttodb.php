@@ -6,7 +6,7 @@ function openDatabase() {
 
 	$dbhost = "localhost";
 	$dbuser= "root";
-	$dbpass = "XXXX";
+	$dbpass = "cs3319";
 	$dbname = "markingvideo";
 	$connection = mysqli_connect($dbhost, $dbuser,$dbpass,$dbname);
 	if (mysqli_connect_errno()) {

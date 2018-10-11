@@ -85,8 +85,34 @@
   }
   $rowfav = mysqli_fetch_assoc($resultfinal);
   $favgroup = $rowfav["videoid"];
-  $finalaverage = ($avgcreative + $avgrel + avgexample + $avgclear)/4;
+  $finalaverage = ($avgcreative + $avgrel + $avgexample + $avgclear)/4;
 
+//check if group marked all the videos
+   $query = "SELECT count(videoid) as nummarked FROM markingscheme WHERE markingsmallgroupid=". $smallGroup . ";";
+  
+   $markall = mysqli_query($connection, $query);
+   if (!$markall) {
+       die ("database failed while checking if group marked all");
+   }
+   $markall1=mysqli_fetch_assoc($markall);
+   $groupMarked = $markall1["nummarked"];
+   $query = "SELECT count(smallgroupid) as numgroups FROM smallgroup WHERE biggroupid = ". $whichBigGroup . ";";
+
+   $markall = mysqli_query($connection, $query);
+   if (!$markall) {
+       die ("database failed while checking if group marked all");
+   }
+   $markall1=mysqli_fetch_assoc($markall);
+   $numOfGroups = $markall1["numgroups"];
+   echo $groupMarked . "<br>";
+   echo $numOfGroups . "<br>";
+   if ($groupMarked + 1 == $numOfGroups) {
+     $groupDidMarking=2;
+   } else if ($groupMarked > 0) {
+     $groupDidMarking=1;
+   } else {
+     $groupDidMarking=0;
+   } 
 
 ?>
       <h2>Hello 
@@ -312,6 +338,12 @@
 <?php
   echo $finalaverage * 4 /5;
 ?>
+</h2>
+<h2> Your group's mark out of 2 for marking the other groups is: 
+<?php
+    echo $groupDidMarking;
+?>
+
 </h2>
  <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
  </ul>
