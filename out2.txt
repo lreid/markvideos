@@ -1,0 +1,1426 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+INSERT INTO biggroup VALUES (1,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (2,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (3,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (4,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (5,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (6,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (7,NULL)
+--------------
+
+--------------
+INSERT INTO biggroup VALUES (8,NULL)
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (1,"Explain the dangers of SQL Injections")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (2,"Explain JSON columns in MySQL")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (3,"What is the difference between OLAP and OLTP and why is this important?")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (4,"Demonstrate the usefulness of INSERT INTO ... SELECT FROM where you are inserting into one table the other output from another")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (5,"Show the difference between GROUP BY and HAVING with examples")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (6,"What is the difference between Nested Subquery and Correlated Subquery?")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (7,"Explain, with examples, the role and importance of Indices (index -both primary and secondary) in a relational database")
+--------------
+
+--------------
+INSERT INTO videotopic VALUES (8,"What's the difference between a star and snowflake schema and when would you use one over the other?")
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(1,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(2,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(3,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(4,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(5,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(6,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(7,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(8,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(9,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(10,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(11,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(12,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(13,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(14,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(15,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(16,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(17,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(18,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(19,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(20,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(21,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(22,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(23,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(24,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(25,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(26,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(27,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(28,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(29,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(30,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(31,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(32,4)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(33,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(34,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(35,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(36,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(37,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(38,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(39,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(40,5)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(41,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(42,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(43,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(44,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(45,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(46,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(47,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(48,6)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(49,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(50,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(51,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(52,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(53,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(54,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(55,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(56,7)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(57,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(58,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(59,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(60,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(61,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(62,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(63,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(64,8)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(65,1)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(66,2)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(67,3)
+--------------
+
+--------------
+INSERT INTO smallgroup VALUES(68,4)
+--------------
+
+--------------
+INSERT INTO video VALUES(1, 2,NULL, 1)
+--------------
+
+--------------
+INSERT INTO video VALUES(2, 3,NULL, 2)
+--------------
+
+--------------
+INSERT INTO video VALUES(3, 4,NULL, 3)
+--------------
+
+--------------
+INSERT INTO video VALUES(4, 5,NULL, 4)
+--------------
+
+--------------
+INSERT INTO video VALUES(5, 6,NULL, 5)
+--------------
+
+--------------
+INSERT INTO video VALUES(6, 7,NULL, 6)
+--------------
+
+--------------
+INSERT INTO video VALUES(7, 8,NULL, 7)
+--------------
+
+--------------
+INSERT INTO video VALUES(8, 1,NULL, 8)
+--------------
+
+--------------
+INSERT INTO video VALUES(9, 2,NULL, 9)
+--------------
+
+--------------
+INSERT INTO video VALUES(10, 3,NULL, 10)
+--------------
+
+--------------
+INSERT INTO video VALUES(11, 4,NULL, 11)
+--------------
+
+--------------
+INSERT INTO video VALUES(12, 5,NULL, 12)
+--------------
+
+--------------
+INSERT INTO video VALUES(13, 6,NULL, 13)
+--------------
+
+--------------
+INSERT INTO video VALUES(14, 7,NULL, 14)
+--------------
+
+--------------
+INSERT INTO video VALUES(15, 8,NULL, 15)
+--------------
+
+--------------
+INSERT INTO video VALUES(16, 1,NULL, 16)
+--------------
+
+--------------
+INSERT INTO video VALUES(17, 2,NULL, 17)
+--------------
+
+--------------
+INSERT INTO video VALUES(18, 3,NULL, 18)
+--------------
+
+--------------
+INSERT INTO video VALUES(19, 4,NULL, 19)
+--------------
+
+--------------
+INSERT INTO video VALUES(20, 5,NULL, 20)
+--------------
+
+--------------
+INSERT INTO video VALUES(21, 6,NULL, 21)
+--------------
+
+--------------
+INSERT INTO video VALUES(22, 7,NULL, 22)
+--------------
+
+--------------
+INSERT INTO video VALUES(23, 8,NULL, 23)
+--------------
+
+--------------
+INSERT INTO video VALUES(24, 1,NULL, 24)
+--------------
+
+--------------
+INSERT INTO video VALUES(25, 2,NULL, 25)
+--------------
+
+--------------
+INSERT INTO video VALUES(26, 3,NULL, 26)
+--------------
+
+--------------
+INSERT INTO video VALUES(27, 4,NULL, 27)
+--------------
+
+--------------
+INSERT INTO video VALUES(28, 5,NULL, 28)
+--------------
+
+--------------
+INSERT INTO video VALUES(29, 6,NULL, 29)
+--------------
+
+--------------
+INSERT INTO video VALUES(30, 7,NULL, 30)
+--------------
+
+--------------
+INSERT INTO video VALUES(31, 8,NULL, 31)
+--------------
+
+--------------
+INSERT INTO video VALUES(32, 1,NULL, 32)
+--------------
+
+--------------
+INSERT INTO video VALUES(33, 2,NULL, 33)
+--------------
+
+--------------
+INSERT INTO video VALUES(34, 3,NULL, 34)
+--------------
+
+--------------
+INSERT INTO video VALUES(35, 4,NULL, 35)
+--------------
+
+--------------
+INSERT INTO video VALUES(36, 5,NULL, 36)
+--------------
+
+--------------
+INSERT INTO video VALUES(37, 6,NULL, 37)
+--------------
+
+--------------
+INSERT INTO video VALUES(38, 7,NULL, 38)
+--------------
+
+--------------
+INSERT INTO video VALUES(39, 8,NULL, 39)
+--------------
+
+--------------
+INSERT INTO video VALUES(40, 1,NULL, 40)
+--------------
+
+--------------
+INSERT INTO video VALUES(41, 2,NULL, 41)
+--------------
+
+--------------
+INSERT INTO video VALUES(42, 3,NULL, 42)
+--------------
+
+--------------
+INSERT INTO video VALUES(43, 4,NULL, 43)
+--------------
+
+--------------
+INSERT INTO video VALUES(44, 5,NULL, 44)
+--------------
+
+--------------
+INSERT INTO video VALUES(45, 6,NULL, 45)
+--------------
+
+--------------
+INSERT INTO video VALUES(46, 7,NULL, 46)
+--------------
+
+--------------
+INSERT INTO video VALUES(47, 8,NULL, 47)
+--------------
+
+--------------
+INSERT INTO video VALUES(48, 1,NULL, 48)
+--------------
+
+--------------
+INSERT INTO video VALUES(49, 2,NULL, 49)
+--------------
+
+--------------
+INSERT INTO video VALUES(50, 3,NULL, 50)
+--------------
+
+--------------
+INSERT INTO video VALUES(51, 4,NULL, 51)
+--------------
+
+--------------
+INSERT INTO video VALUES(52, 5,NULL, 52)
+--------------
+
+--------------
+INSERT INTO video VALUES(53, 6,NULL, 53)
+--------------
+
+--------------
+INSERT INTO video VALUES(54, 7,NULL, 54)
+--------------
+
+--------------
+INSERT INTO video VALUES(55, 8,NULL, 55)
+--------------
+
+--------------
+INSERT INTO video VALUES(56, 1,NULL, 56)
+--------------
+
+--------------
+INSERT INTO video VALUES(57, 2,NULL, 57)
+--------------
+
+--------------
+INSERT INTO video VALUES(58, 3,NULL, 58)
+--------------
+
+--------------
+INSERT INTO video VALUES(59, 4,NULL, 59)
+--------------
+
+--------------
+INSERT INTO video VALUES(60, 5,NULL, 60)
+--------------
+
+--------------
+INSERT INTO video VALUES(61, 6,NULL, 61)
+--------------
+
+--------------
+INSERT INTO video VALUES(62, 7,NULL, 62)
+--------------
+
+--------------
+INSERT INTO video VALUES(63, 8,NULL, 63)
+--------------
+
+--------------
+INSERT INTO video VALUES(64, 1,NULL, 64)
+--------------
+
+--------------
+INSERT INTO video VALUES(65, 2,NULL, 65)
+--------------
+
+--------------
+INSERT INTO video VALUES(66, 3,NULL, 66)
+--------------
+
+--------------
+INSERT INTO video VALUES(67, 4,NULL, 67)
+--------------
+
+--------------
+INSERT INTO video VALUES(68, 5,NULL, 68)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aali352','Aadam','Ali','pass',28,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aasner','Aaron Joshua','Asner','pass',53,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('amill84','Aiden','Miller','pass',17,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('agrego9','Alexander','Gregor','pass',49,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aguoth','Alexander','Guoth','pass',49,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('alee657','Alison','Lee','pass',52,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('abarke42','Alyssa','Barker','pass',6,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('agagne22','Alyssa','Gagne','pass',6,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('anguy44','An','Nguyen','pass',12,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aor','Anderson','Or','pass',4,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('agieral2','Andrzej Tomasz','Gieralt','pass',18,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('anandi','Anirudha','Nandi','pass',3,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ajosep54','Ann','Joseph','pass',39,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('awong655','Anthony','Wong','pass',29,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aabdipou','Arshia','Abdipour','pass',11,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aanpala','Arun','Anpalagan','pass',21,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('abhatha2','Arvinder','Bhathal','pass',62,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('amanoch3','Ashley','Manocha','pass',35,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aaltalm2','Ashraf','Altalmas','pass',66,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('achan537','Austin Han-Ting','Chan','pass',29,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('aabell2','Austin John','Abell','pass',63,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('brathod','Bhavini Harshad','Rathod','pass',24,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('bhorth','Brayden Michael Joseph','Horth','pass',5,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('blukasi','Brent Matthew','Lukasik','pass',18,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('byam2','Brian','Yam','pass',33,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('btaylo65','Brody Joseph Terrence','Taylor','pass',45,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cchao25','Chao','Chao','pass',10,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cwhetha','Christian Alexander','Whetham','pass',9,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ctam86','Christopher','Tam','pass',31,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cnguy23','Cindy Thanh Thao','Nguyen','pass',35,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ccretu','Claudiu','Cretu','pass',5,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cchan827','Colin','Chan','pass',16,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cmcnei24','Colin Larsen','Mcneill','pass',46,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cdunne8','Conor Joe','Dunne','pass',32,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('cvidan','Curtis','Vidan','pass',59,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dzhong4','Da','Zhong','pass',7,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ddorobek','Damien','Dorobek','pass',5,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dahmed25','Danial','Ahmed','pass',58,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dhong44','Daniel','Hong','pass',64,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('drawana2','Daniel','Rawana','pass',64,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dgleaso','Daniel B','Gleason','pass',64,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dgilber8','Daniel Matthew','Gilbert','pass',51,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dpino2','Daniel Ronald','Pino','pass',58,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('djia26','Danwen','Jia','pass',40,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('dkim579','Deok-Hwan','Kim','pass',12,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('drobin84','Deshannon Joshua D','Robinson','pass',48,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ddayarat','Dinushan','Dayarathna','pass',66,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ewebb33','Edward Arwyn Harvey','Webb','pass',61,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('egershon','Elad Inon','Gershon','pass',54,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ewong347','Emmanuel Zack Chuan','Wong','pass',68,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('echris3','Erik Robert','Christensen','pass',68,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('egomolin','Evan','Gomolin','pass',38,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('fhaque4','Fariba','Haque','pass',53,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('fhasan7','Fatima','Hasan','pass',20,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('flai26','Fiona Quin-Yee','Lai','pass',30,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('fsmith26','Fletcher Harrison','Smith','pass',55,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('fplancke','Frances','Plancke','pass',57,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('fdong22','Frank','Dong','pass',3,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('gmccall5','Garren','Mccallum','pass',54,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('gchiu8','Gary','Chiu','pass',51,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ggainham','George','Gainham','pass',51,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('gbraber','Graeme','Brabers','pass',62,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('hsadiq','Hakeem','Sadiq','pass',63,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('hbana3','Hamza','Bana','pass',36,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('hjiang82','Hantao','Jiang','pass',8,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('hwang683','Hao Ming','Wang','pass',3,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('hli843','Haolun','Li','pass',41,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('idarinsk','Ivgeni','Darinski','pass',43,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jstirl','Jacob','Stirling','pass',43,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jgonca3','Jacob Anton Brito','Goncalves','pass',43,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jross263','Jacob Michael','Ross','pass',26,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jlau333','Jacquelyn','Lau','pass',49,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jschind','Jake','Schindler','pass',1,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jmclau26','Jake Fraser','Mclaughlin','pass',19,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jabnett','James William','Abnett','pass',57,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jbonvive','James William','Bonvivere','pass',57,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jjosep56','Jermiah','Joseph','pass',31,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jiu','Jerry Tze Ngai','Iu','pass',44,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jdavid85','Jesse Mitchell','Davidson','pass',41,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jyu426','Jiacheng','Yu','pass',15,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jlin352','Jialin','Lin','pass',15,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jxu524','Jing','Xu','pass',65,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jdong56','Jiong','Dong','pass',24,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jboone6','Jodi Speal','Boone','pass',23,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jbrunel2','Johnathan','Brunelle','pass',8,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jcirelli','Jonathan','Cirelli','pass',46,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jtimbre','Jonathan','Timbrell','pass',46,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jlee3227','Joon','Lee','pass',36,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jmcinni5','Jordan Dain','Mcinnis','pass',65,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jferna29','Jorge','Fernandez','pass',64,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jshlayen','Joseph','Shlayen','pass',38,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jnoble26','Joshua','Noble','pass',2,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jszilves','Julia','Szilveszter','pass',35,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jwang942','Justin','Wang','pass',47,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('jmarsh86','Justin Albert','Marshall','pass',47,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('kzambran','Katherine','Zambrano','pass',25,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('kwilki26','Kathryn','Wilkinson','pass',42,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('krath5','Kenneth Richard','Rath','pass',18,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ksun45','Kevin Tianhao','Sun','pass',30,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('kcheu4','Kyle','Cheung','pass',49,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('lparanth','Laksman','Paranthaman','pass',33,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('lkim68','Leonard','Kim','pass',56,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('lvassili','Leopoldine Isabelle','Vassiliou','pass',23,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('lhuan22','Lishan','Huang','pass',20,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mmanuel5','Marco','Manuel','pass',44,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mmathura','Marisa Lakshmidavi','Mathura','pass',57,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mchi7','Mark','Chi','pass',67,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mjaskiew','Mark','Jaskiewicz','pass',67,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mkarimif','Maryam','Karimi Firozjaei','pass',20,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mvasile3','Matea','Vasileski','pass',45,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mvacacel','Mateo','Vacacela-Cueva','pass',19,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mabado','Mathew','Abado','pass',32,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mcosta32','Matthew','Costa','pass',9,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mrobi24','Matthew Stephen','Robinson','pass',9,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mmurad7','Maya Sarena','Murad','pass',29,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mpunyama','Meher pooja pranavi','punyamanthula','pass',39,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mtran247','Melissa','Tran','pass',43,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mkadihi','Meryem','Kadihi','pass',42,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mbian3','Michael','Bian','pass',60,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mnesen','Michael','Nesen','pass',60,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mbooth28','Michael Anthony William','Booth','pass',60,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mweetman','Michael Edward','Weetman','pass',61,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mrist','Michael Jeremy','Rist','pass',65,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mtangtra','Michael Kien','Tang Tran','pass',33,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mmoriya','Michael Koji','Moriyama','pass',27,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mlevis','Michael Scott','Levis','pass',25,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mchen375','Michelle','Chen','pass',56,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mlim59','Mike','Lim','pass',59,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mjikhare','Mikhail','Jikharev','pass',45,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mzhu92','Min','Zhu','pass',50,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mchau24','Ming Yin Kenneth','Chau','pass',2,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('myu94','Mingyi','Yu','pass',37,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mkim584','Minhyuk','Kim','pass',56,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mcraig52','Mitchell James','Craig','pass',53,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mfaid','Mohamed','Faid','pass',26,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mniazi5','Mohammad','Niazi','pass',32,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('mdonal25','Montana','Donaldson','pass',14,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('npate252','Neil','Patel','pass',48,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ngardi2','Nicholas','Gardi','pass',47,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ntocco','Nicholas','Tocco','pass',47,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('nporrone','Nicholas Anthony','Porrone','pass',47,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('nprat','Nicholas Roderic','Prat','pass',55,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ngutheil','Niklas Sebastian','Gutheil','pass',6,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('nxu56','Ning','Xu','pass',13,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('oabdelqa','Omar','Abdel-Qader','pass',21,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ohunsbur','Owen James','Hunsburger','pass',26,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('pcarter8','Patrick','Carter','pass',52,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ppham26','Phu Khiem Matthew','Pham','pass',27,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('phuang68','Pu','Huang','pass',7,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('qliu287','Qi','Liu','pass',10,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('qzhao64','Qiyuan','Zhao','pass',15,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rhakimja','Ramtin','Hakimjavadi','pass',61,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rlathigr','Ravin','Lathigra','pass',37,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rjacks47','Reid Morris','Jackson','pass',64,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rgabrie','Riley Anthony','Gabriele','pass',46,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rdesai23','Rishabhkumar Rakeshkumar','Desai','pass',34,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rhe25','Rongji','He','pass',2,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rdavis54','Ryan','Davis','pass',1,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rkenne49','Ryan','Kennedy','pass',28,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('rreid73','Ryley Conner','Reid','pass',44,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('salabi3','Samer','Alabi','pass',27,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('swong544','Samuel','Wong','pass',31,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('salabba','Sarah','Al-Abbasi','pass',12,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('slopez24','Sebastian','Lopez','pass',67,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('selmolla','Seif','Elmolla','pass',41,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('skim2257','Sejin','Kim','pass',48,NULL)
+------ERROR 1062 (23000) at line 369: Duplicate entry '1' for key 'PRIMARY'
+--------
+
+--------------
+INSERT INTO student VALUES ('smequan','Selam','Mequanint','pass',40,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('skhan727','Shah Murad','Khan','pass',55,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('siqbal49','Shahryar','Iqbal','pass',59,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('she29','Shan','He','pass',40,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('slu253','Sheng','Lu','pass',11,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('samin46','Shivang','Amin','pass',4,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('smcmast2','Spencer','McMaster','pass',28,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('sgunders','Stacey Jade','Gunderson','pass',52,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('svailla4','Stephane','Vaillancourt','pass',34,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('scrossma','Steven','Crossman','pass',14,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ssilber','Steven Arnold','Silber','pass',14,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('sshakya','Suhail','Shakya','pass',4,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('schinni2','Suseela','Chinniah','pass',38,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('tbowerba','Terrence Drew','Bowerbank','pass',1,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('tgrummet','Thomas','Grummett','pass',58,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('tliu323','Tianyuan','Liu','pass',54,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('tlatino','Tyler','Latino','pass',66,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('trober64','Tyler Gordon','Roberts','pass',66,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('tbrowne5','Tyler Stephens','Browne','pass',9,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ukajendi','Usant','Kajendirarajah','pass',21,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('vmaulkha','Vijay','Maulkhan','pass',14,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('vyudin','Volodymyr','Yudin','pass',17,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('wsong73','Wanyun','Song','pass',39,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('wmaysuik','Wayne Jackson','Maysuik','pass',23,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('wruan2','William','Ruan','pass',24,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('xhuan64','Xueli','Huang','pass',50,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yhuan385','Yangzhe','Huang','pass',13,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yche2424','Yanxiu','Chen','pass',22,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yyang853','Yanzhou','Yang','pass',34,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yjian382','Yi Xin','Jiang','pass',68,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yhe362','Yijun','He','pass',13,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yxie89','Yilin','Xie','pass',22,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('yxu537','Yimin','Xu','pass',11,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('ysun823','Yingxue','Sun','pass',22,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('zmullins','Zachary','Mullins','pass',16,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('zzhan725','Zhaohe','Zhang','pass',10,NULL)
+--------------
+
+--------------
+INSERT INTO student VALUES ('zguan33','Zijie','Guan','pass',7,NULL)
+--------------
+
+--------------
+INSERT INTO video VALUES (1,2,'https://www.youtube.com/watch?v=JXE9gjvGYVE',1)
+--------------
+

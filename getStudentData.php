@@ -35,7 +35,7 @@
   }
   $row1=mysqli_fetch_assoc($result);
   $whichBigGroup = $row1["biggroupid"];
-  $query="SELEcT smallgroupid FROM smallgroup where biggroupid =" . $whichBigGroup . ";";
+  $query="SELEcT smallgroupid FROM smallgroup where biggroupid =" . $whichBigGroup . " AND smallgroupid <> " . $smallGroup .";";
   $result = mysqli_query($connection,$query);
   if (!$result) {
         die("Database query failed -getting big group");
@@ -211,26 +211,31 @@
                 <h3>Topic: <span id="videotopic"></span></h3>
 
                 <h3> Ranking Scale: 1=Poor, 2=OK, 3=Average, 4=Good, 5=Excellent</h3>
-                Creativity: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="radio" value="1" name="creative" id="c1">1
+                <table border="0"><tr><td>
+                Creativity: </td><td> <input type="radio" value="1" name="creative" id="c1">1
                 <input type="radio" name="creative" value="2" id="c2">2
                 <input type="radio" name="creative" value="3" id="c3">3
                 <input type="radio" name="creative" value="4" id="c4">4
-                <input type="radio" name="creative" value="5" id="c5">5<br> Use of Examples: &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                <input type="radio" name="creative" value="5" id="c5">5</td></tr>
+                <tr><td> Use of Examples: </td><td>
                 <input type="radio" name="examples" value="1" id="e1">1 <input type="radio" name="examples" value="2" id="e2">2
                 <input type="radio" name="examples" value="3" id="e3">3
-                <input type="radio" name="examples" value="4" id="e4">4<input type="radio" name="examples" value="5" id="e5">5<br> Concepts Explained Clearly: <input type="radio" name="clearly" value="1" id="cc1">1
+                <input type="radio" name="examples" value="4" id="e4">4<input type="radio" name="examples" value="5" id="e5">5</td></tr>
+                <tr><td> Concepts Explained Clearly: </td><td> 
+                <input type="radio" name="clearly" value="1" id="cc1">1
                 <input type="radio" name="clearly" value="2" id="cc2">2
                 <input type="radio" name="clearly" value="3" id="cc3">3
                 <input type="radio" name="clearly" value="4" id="cc4">4
-                <input type="radio" name="clearly" value="5" id="cc5">5<br> Explanation of why the Concept is Relevant/Important:
+                <input type="radio" name="clearly" value="5" id="cc5">5</td></tr>
+                <tr><td> Explanation of why the Concept is Relevant/Important:</td><td>
                 <input type="radio" name="relevance" value="1" id="r1">1
                 <input type="radio" name="relevance" value="2" id="r2">2
                 <input type="radio" name="relevance" value="3" id="r3">3
                 <input type="radio" name="relevance" value="4" id="r4">4
-                <input type="radio" name="relevance" value="5" id="r5">5<br>
-                <br>
+                <input type="radio" name="relevance" value="5" id="r5">5</td>
+                </tr></table>
                 <input type="submit" value="Submit Group Evaluation" disabled="true" id="submitGroupEval">
-                <br>
+                <br><br>
                 <iframe width="420" height="315" id="setTheVideo"></iframe>
             </form>
           </div>

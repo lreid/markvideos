@@ -1,0 +1,20 @@
+DROP DATABASE IF EXISTS markingvideo;
+CREATE DATABASE markingvideo;
+USE markingvideo;
+
+
+CREATE TABLE biggroup (biggroupid INT, favgroups VARCHAR(100),  PRIMARY KEY (biggroupid));
+
+CREATE TABLE smallgroup (smallgroupid INT, biggroupid INT,  PRIMARY KEY (smallgroupid), FOREIGN KEY (biggroupid) REFERENCES biggroup(biggroupid));
+
+CREATE TABLE student (userid VARCHAR(20), firstname VARCHAR(50), lastname VARCHAR(50), password VARCHAR(20), smallgroupid INT, peervalue DECIMAL(3,1), PRIMARY KEY (userid),FOREIGN KEY (smallgroupid) REFERENCES smallgroup(smallgroupid) );
+
+CREATE TABLE videotopic (vtopicid INT, topic VARCHAR(400),  PRIMARY KEY (vtopicid) );
+
+CREATE TABLE video (videoid INT, vtopicid INT, url VARCHAR(200), smallgroupid INT, PRIMARY KEY (videoid), FOREIGN KEY (smallgroupid) REFERENCES smallgroup(smallgroupid), FOREIGN KEY (vtopicid) REFERENCES videotopic(vtopicid));
+
+CREATE TABLE markingscheme(markingschemeid INT NOT NULL AUTO_INCREMENT, creativitymark INT, relevancemark INT, examplesmark INT, claritymark INT, videoid INT, markingsmallgroupid INT, favgroup INT, PRIMARY KEY (markingschemeid), FOREIGN KEY (videoid) REFERENCES video(videoid),FOREIGN KEY (markingsmallgroupid) REFERENCES smallgroup(smallgroupid) );
+
+CREATE TABLE peerassessment(assessor VARCHAR(20), gettingassess VARCHAR(20), peerassessmark INT,  PRIMARY KEY (assessor, gettingassess), FOREIGN KEY (assessor) REFERENCES student(userid), FOREIGN KEY (gettingassess) REFERENCES student(userid)); 
+
+create view vfav as (select sum(markingscheme.favgroup) as fav, videoid, biggroup.biggroupid from markingscheme, smallgroup, biggroup where videoid=smallgroup.smallgroupid and smallgroup.biggroupid=biggroup.biggroupid group by videoid);

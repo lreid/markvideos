@@ -1,0 +1,278 @@
+Warning: Using a password on the command line interface can be insecure.
+--------------
+INSERT INTO video VALUES (1,2,'https://www.youtube.com/watch?v=JXE9gjvGYVE',1)
+--------------
+
+--------------
+INSERT INTO video VALUES (2,3,'https://www.youtube.com/watch?v=VuNIsY6JdUw&list=PLAB246B18153EA083',2)
+--------------
+
+--------------
+INSERT INTO video VALUES (3,4,'https://www.youtube.com/watch?v=WYm60pjOKCY',3)
+--------------
+
+--------------
+INSERT INTO video VALUES (4,5,'https://www.youtube.com/watch?v=g4a7_HH9Wbg',4)
+--------------
+
+--------------
+INSERT INTO video VALUES (5,6,'https://www.youtube.com/watch?v=Nz1GDqe9YNA',5)
+--------------
+
+--------------
+INSERT INTO video VALUES (6,7,'https://www.youtube.com/watch?v=Nz1GDqe9YNA',6)
+--------------
+
+--------------
+INSERT INTO video VALUES (7,8,'https://www.youtube.com/watch?v=Nz1GDqe9YNA',7)
+--------------
+
+--------------
+INSERT INTO video VALUES (8,1,'https://www.youtube.com/watch?v=Nz1GDqe9YNA',8)
+--------------
+
+--------------
+INSERT INTO video VALUES (9,2,'https://www.youtube.com/watch?v=b3b753OvHr8',9)
+--------------
+
+--------------
+INSERT INTO video VALUES (10,3,'https://www.youtube.com/watch?v=b3b753OvHr8',10)
+--------------
+
+--------------
+INSERT INTO video VALUES (11,4,'https://www.youtube.com/watch?v=b3b753OvHr8',11)
+--------------
+
+--------------
+INSERT INTO video VALUES (12,5,'https://www.youtube.com/watch?v=NYy59ct28p18',12)
+--------------
+
+--------------
+INSERT INTO video VALUES (13,6,'https://www.youtube.com/watch?v=NYy59ct28p19',13)
+--------------
+
+--------------
+INSERT INTO video VALUES (14,7,'https://www.youtube.com/watch?v=NYy59ct28p20',14)
+--------------
+
+--------------
+INSERT INTO video VALUES (15,8,'https://www.youtube.com/watch?v=NYy59ct28p21',15)
+--------------
+
+--------------
+INSERT INTO video VALUES (16,1,'https://www.youtube.com/watch?v=NYy59ct28p22',16)
+--------------
+
+--------------
+INSERT INTO video VALUES (17,2,'https://www.youtube.com/watch?v=NYy59ct28p23',17)
+--------------
+
+--------------
+INSERT INTO video VALUES (18,3,'https://www.youtube.com/watch?v=NYy59ct28p24',18)
+--------------
+
+--------------
+INSERT INTO video VALUES (19,4,'https://www.youtube.com/watch?v=NYy59ct28p25',19)
+--------------
+
+--------------
+INSERT INTO video VALUES (20,5,'https://www.youtube.com/watch?v=NYy59ct28p26',20)
+--------------
+
+--------------
+INSERT INTO video VALUES (21,6,'https://www.youtube.com/watch?v=NYy59ct28p27',21)
+--------------
+
+--------------
+INSERT INTO video VALUES (22,7,'https://www.youtube.com/watch?v=NYy59ct28p28',22)
+--------------
+
+--------------
+INSERT INTO video VALUES (23,8,'https://www.youtube.com/watch?v=NYy59ct28p29',23)
+--------------
+
+--------------
+INSERT INTO video VALUES (24,1,'https://www.youtube.com/watch?v=NYy59ct28p30',24)
+--------------
+
+--------------
+INSERT INTO video VALUES (25,2,'https://www.youtube.com/watch?v=NYy59ct28p31',25)
+--------------
+
+--------------
+INSERT INTO video VALUES (26,3,'https://www.youtube.com/watch?v=NYy59ct28p32',26)
+--------------
+
+--------------
+INSERT INTO video VALUES (27,4,'https://www.youtube.com/watch?v=NYy59ct28p33',27)
+--------------
+
+--------------
+INSERT INTO video VALUES (28,5,'https://www.youtube.com/watch?v=NYy59ct28p34',28)
+--------------
+
+--------------
+INSERT INTO video VALUES (29,6,'https://www.youtube.com/watch?v=NYy59ct28p35',29)
+--------------
+
+--------------
+INSERT INTO video VALUES (30,7,'https://www.youtube.com/watch?v=NYy59ct28p36',30)
+--------------
+
+--------------
+INSERT INTO video VALUES (31,8,'https://www.youtube.com/watch?v=NYy59ct28p37',31)
+--------------
+
+--------------
+INSERT INTO video VALUES (32,1,'https://www.youtube.com/watch?v=NYy59ct28p38',32)
+--------------
+
+--------------
+INSERT INTO video VALUES (33,2,'https://www.youtube.com/watch?v=NYy59ct28p39',33)
+--------------
+
+--------------
+INSERT INTO video VALUES (34,3,'https://www.youtube.com/watch?v=NYy59ct28p40',34)
+--------------
+
+--------------
+INSERT INTO video VALUES (35,4,'https://www.youtube.com/watch?v=NYy59ct28p41',35)
+--------------
+
+--------------
+INSERT INTO video VALUES (36,5,'https://www.youtube.com/watch?v=NYy59ct28p42',36)
+--------------
+
+--------------
+INSERT INTO video ERROR 1452 (23000) at line 71: Cannot add or update a child row: a foreign key constraint fails (`markingvideo`.`video`, CONSTRAINT `video_ibfk_1` FOREIGN KEY (`smallgroupid`) REFERENCES `smallgroup` (`smallgroupid`))
+VALUES (37,6,'https://www.youtube.com/watch?v=NYy59ct28p43',37)
+--------------
+
+--------------
+INSERT INTO video VALUES (38,7,'https://www.youtube.com/watch?v=NYy59ct28p44',38)
+--------------
+
+--------------
+INSERT INTO video VALUES (39,8,'https://www.youtube.com/watch?v=NYy59ct28p45',39)
+--------------
+
+--------------
+INSERT INTO video VALUES (40,1,'https://www.youtube.com/watch?v=NYy59ct28p46',40)
+--------------
+
+--------------
+INSERT INTO video VALUES (41,2,'https://www.youtube.com/watch?v=NYy59ct28p47',41)
+--------------
+
+--------------
+INSERT INTO video VALUES (42,3,'https://www.youtube.com/watch?v=NYy59ct28p48',42)
+--------------
+
+--------------
+INSERT INTO video VALUES (43,4,'https://www.youtube.com/watch?v=NYy59ct28p49',43)
+--------------
+
+--------------
+INSERT INTO video VALUES (44,5,'https://www.youtube.com/watch?v=NYy59ct28p50',44)
+--------------
+
+--------------
+INSERT INTO video VALUES (45,6,'https://www.youtube.com/watch?v=NYy59ct28p51',45)
+--------------
+
+--------------
+INSERT INTO video VALUES (46,7,'https://www.youtube.com/watch?v=NYy59ct28p52',46)
+--------------
+
+--------------
+INSERT INTO video VALUES (47,8,'https://www.youtube.com/watch?v=NYy59ct28p53',47)
+--------------
+
+--------------
+INSERT INTO video VALUES (48,1,'https://www.youtube.com/watch?v=NYy59ct28p54',48)
+--------------
+
+--------------
+INSERT INTO video VALUES (49,2,'https://www.youtube.com/watch?v=NYy59ct28p55',49)
+--------------
+
+--------------
+INSERT INTO video VALUES (50,3,'https://www.youtube.com/watch?v=NYy59ct28p56',50)
+--------------
+
+--------------
+INSERT INTO video VALUES (51,4,'https://www.youtube.com/watch?v=NYy59ct28p57',51)
+--------------
+
+--------------
+INSERT INTO video VALUES (52,5,'https://www.youtube.com/watch?v=NYy59ct28p58',52)
+--------------
+
+--------------
+INSERT INTO video VALUES (53,6,'https://www.youtube.com/watch?v=NYy59ct28p59',53)
+--------------
+
+--------------
+INSERT INTO video VALUES (54,7,'https://www.youtube.com/watch?v=NYy59ct28p60',54)
+--------------
+
+--------------
+INSERT INTO video VALUES (55,8,'https://www.youtube.com/watch?v=NYy59ct28p61',55)
+--------------
+
+--------------
+INSERT INTO video VALUES (56,1,'https://www.youtube.com/watch?v=NYy59ct28p62',56)
+--------------
+
+--------------
+INSERT INTO video VALUES (57,2,'https://www.youtube.com/watch?v=NYy59ct28p63',57)
+--------------
+
+--------------
+INSERT INTO video VALUES (58,3,'https://www.youtube.com/watch?v=NYy59ct28p64',58)
+--------------
+
+--------------
+INSERT INTO video VALUES (59,4,'https://www.youtube.com/watch?v=NYy59ct28p65',59)
+--------------
+
+--------------
+INSERT INTO video VALUES (60,5,'https://www.youtube.com/watch?v=NYy59ct28p66',60)
+--------------
+
+--------------
+INSERT INTO video VALUES (61,6,'https://www.youtube.com/watch?v=NYy59ct28p67',61)
+--------------
+
+--------------
+INSERT INTO video VALUES (62,7,'https://www.youtube.com/watch?v=NYy59ct28p68',62)
+--------------
+
+--------------
+INSERT INTO video VALUES (63,8,'https://www.youtube.com/watch?v=NYy59ct28p69',63)
+--------------
+
+--------------
+INSERT INTO video VALUES (64,1,'https://www.youtube.com/watch?v=NYy59ct28p70',64)
+--------------
+
+--------------
+INSERT INTO video VALUES (65,2,'https://www.youtube.com/watch?v=NYy59ct28p71',65)
+--------------
+
+--------------
+INSERT INTO video VALUES (66,3,'https://www.youtube.com/watch?v=NYy59ct28p72',66)
+--------------
+
+--------------
+INSERT INTO video VALUES (67,4,'https://www.youtube.com/watch?v=NYy59ct28p73',67)
+--------------
+
+--------------
+INSERT INTO video VALUES (68,5,'https://www.youtube.com/watch?v=NYy59ct28p74',68)
+--------------
+
+--------------
+INSERT INTO video VALUES (69,6,'https://www.youtube.com/watch?v=NYy59ct28p75',69)
+--------------
+
