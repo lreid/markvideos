@@ -56,6 +56,7 @@ function prepareActionListeners() {
 //        document.getElementById('mypass').addEventListener('blur',showChoices);
 //        document.getElementById('mypass').addEventListener('onkeypress',checkKey);
           document.getElementById('peereval').addEventListener('change',displayPeer);
+          document.getElementById('peereval').addEventListener('click',displayPeer);
           document.getElementById('pickagroup').addEventListener('change',displayVideo);
           document.getElementById('pickagroup').addEventListener('click',displayVideo);
           addSomeListeners("creative");
@@ -160,3 +161,8 @@ function displayVideo() {
 }
 
 
+window.onpageshow = function(event) {
+  if (event.persisted) {
+      window.location.reload() 
+  }
+};

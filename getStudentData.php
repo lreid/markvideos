@@ -5,6 +5,7 @@
   <title>3 Minute Videos in Western Databases Course</title>
   <link rel="stylesheet" href="video.css">
   <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+
 </head>
 
 <body>

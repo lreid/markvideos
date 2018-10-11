@@ -21,8 +21,8 @@
   } else {
      $queryset = "INSERT INTO peerassessment VALUES ('". $doingAssessingStudent . "','" . $beingAssessedStudent . "',". $valueGiven . ");";
   }
-  $result = mysqli_query($connection, $queryset);
-  if (!$result) {
+  $resultpeers = mysqli_query($connection, $queryset);
+  if (!$resultpeers) {
     die ("Error: while updating peer assessment");
   }
   echo "<h2>Peer evaluation updated! - Go back a page to update your other group members</h2>";
