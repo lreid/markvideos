@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
 <meta charset="utf-8">
   <title>Mark Group</title>
@@ -114,7 +113,6 @@
    } else {
      $groupDidMarking=0;
    } 
-=======
 
   <head>
     <meta charset="utf-8">
@@ -122,7 +120,6 @@
     <link rel="stylesheet" href="video.css">
   </head>
   <body>
->>>>>>> befea82e4a73502829cc0052aaa9df30610a5f70
 
 <?php
    //connect to database
@@ -398,7 +395,6 @@
 <?php
    echo $finalaverage * 4 / 5;
 ?>
-<<<<<<< HEAD
 </h2>
 <h2> Your group's mark out of 2 for marking the other groups is: 
 <?php
@@ -410,7 +406,6 @@
  </ul>
 <hr>
 </div>
-=======
           </h2>
             <h3>The favourite video for the group of videos that you marked was Group Number: <span id="favgroup"></span></h3>
             </ul>
@@ -423,6 +418,5 @@
             displayVideo()
           </script>
   </body>
->>>>>>> befea82e4a73502829cc0052aaa9df30610a5f70
 
 </html>
